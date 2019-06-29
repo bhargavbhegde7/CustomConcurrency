@@ -14,13 +14,13 @@ public class CrazyQ<T>
     }
 
     public synchronized void add(T i) throws InterruptedException {
-        if(Q.size() == limit) wait();
+        while(Q.size() == limit) wait();
         if(Q.size() == 0) notifyAll();
         Q.add(i);
     }
 
     public synchronized T get() throws InterruptedException {
-        if(Q.size() == 0) wait();
+        while(Q.size() == 0) wait();
         if(Q.size() == limit) notifyAll();
         return Q.remove(0);
     }
