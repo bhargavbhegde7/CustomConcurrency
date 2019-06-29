@@ -5,7 +5,7 @@ import com.bhegde.concurrency.executor.CustomFuture;
 
 import java.util.concurrent.Callable;
 
-public class CustomExucutorExample
+public class CustomExecutorExample
 {
     public static void main(String[] args)
     {
