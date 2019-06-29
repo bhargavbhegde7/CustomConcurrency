@@ -12,13 +12,14 @@ public class CustomExucutorExample
         CustomFuture future = CustomExecutor.execute(new Callable() {
             @Override
             public Object call() throws Exception {
-                Thread.sleep(1000);
+                Thread.sleep(3*1000);
                 return 123456;
             }
         });
-        System.out.println("ran the executor");
+        System.out.println("Main : ran the executor");
         try {
-            System.out.println(future.get());
+            System.out.println("Main : Waiting on future");
+            System.out.println("Main : future returned finally!! "+future.get());
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

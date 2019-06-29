@@ -14,12 +14,12 @@ public class CustomExecutor
 
                 try {
                     future.setResult(callable.call());
-                    System.out.println("future result set");
+                    System.out.println("Internal Thread : future result setting done");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
 
-                System.out.println("thread is done!");
+                System.out.println("Internal Thread : thread is done!");
 
             }
         });
